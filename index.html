@@ -1,0 +1,308 @@
+<html>
+<head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>χ Hong</title>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;700;800&amp;family=Geist:wght@400;500;700&amp;family=JetBrains+Mono:wght@500&amp;family=Open+Sans:ital,wght@0,400;0,700&amp;subset=greek&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+
+<link rel="icon" href="./assets/favicon.ico">
+<link rel="shortcut icon" href="./assets/favicon.ico">
+<link rel="stylesheet" href="dist/styles.css">
+</head>
+<body class="antialiased selection:bg-primary-fixed selection:text-on-primary-fixed flex flex-col min-h-screen">
+<!-- TopAppBar -->
+<nav class="docked full-width top-0 sticky z-50 bg-surface/80 backdrop-blur-xl border-b border-outline-variant">
+  <div class="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-4 max-w-container-max mx-auto">
+    <span id="nav-title" class="font-headline-md text-headline-md font-bold tracking-tight text-on-surface transition-opacity duration-300">The Spot</span>
+    <div class="flex items-center gap-6">
+      <!-- <div class="hidden md:flex gap-8 items-center">
+        <a class="text-primary border-b-2 border-primary font-bold hover:text-primary transition-colors duration-200" href="#">About</a>
+        <a class="text-on-surface-variant hover:text-primary transition-colors duration-200" href="#">Contact</a>
+      </div> -->
+      <div class="flex gap-4">
+        <button id="share-btn" class="material-symbols-outlined text-primary p-2 cursor-pointer">share</button>
+        <button id="theme-toggle" class="material-symbols-outlined text-primary p-2 cursor-pointer">dark_mode</button>
+      </div>
+    </div>
+  </div>
+</nav>
+<main class="max-w-160 mx-auto px-margin-mobile md:px-0 py-stack-sm">
+<!-- Profile Header -->
+<header id="profile-header" class="flex flex-col items-center text-center space-y-stack-sm mb-stack-md">
+  <div class="relative group">
+    <div id="avatar-glow" class="absolute -inset-0.5 bg-linear-to-r from-primary to-secondary blur opacity-20 group-hover:opacity-40 transition duration-1000 group-hover:duration-200" style="border-radius: 50%;"></div>
+    <img alt="Kai Hong" class="relative w-32 h-32 rounded-full object-cover border-4 border-surface shadow-xl" style="border-radius: 50%; object-position: center 10%;" src="./assets/avatar.png">
+  </div>
+  <div class="space-y-2">
+    <h1 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-on-surface">χ Hong</h1>
+    <p class="text-slate-500">
+      <span>/kai hoŋ/</span> · <span>陆洋凯鸿</span> · <span>he/they</span>
+    </p>
+    <p class="font-body-lg text-body-lg text-on-surface-variant max-w-md mx-auto">Hi, my name is <span id="chi-tip-trigger" class="relative inline-block group cursor-help underline decoration-dotted underline-offset-8">χ<span id="chi-tip" class="pointer-events-none absolute bottom-1/2 left-1/2 mb-1 whitespace-nowrap rounded-full bg-inverse-surface text-inverse-on-surface px-3 py-1 text-xs opacity-0 group-hover:opacity-100 transition-opacity duration-200 z-10">You can also call me Kai!</span></span>! <br/>I'm a goat-deer chimera from 🇸🇬 Singapore.</p>
+    <p class="text-sm text-on-surface-variant max-w-md mx-auto">Nothing much here at the moment… Watch this space, maybe?</p>
+  </div>
+</header>
+<!-- Social Links -->
+<section class="my-stack-md flex justify-center gap-stack-sm">
+  <a class="p-3 bg-surface-container border border-outline-variant rounded-full text-on-surface-variant hover:text-primary transition-all duration-300" href="https://github.com/kaimerah">
+    <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+      <path d="M12 0C5.37 0 0 5.37 0 12c0 5.302 3.438 9.8 8.207 11.387.6.113.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.63-5.37-12-12-12z"/>
+    </svg>
+  </a>
+  <!-- <a class="p-3 bg-surface-container border border-outline-variant rounded-full text-on-surface-variant hover:text-primary transition-all duration-300" href="#">
+    <span class="material-symbols-outlined">alternate_email</span>
+  </a>
+  <a class="p-3 bg-surface-container border border-outline-variant rounded-full text-on-surface-variant hover:text-primary transition-all duration-300" href="#">
+    <span class="material-symbols-outlined">link</span>
+  </a> -->
+</section>
+
+<!-- Vertical Stack of Cards -->
+<section class="space-y-stack-sm">
+  <!--Char Refs-->
+  <a id="char-ref-card" class="group block p-stack-sm bg-surface-container-lowest border border-outline-variant rounded-xl transition-all duration-300 tech-glow hover:translate-y-0.5" href="#" onclick="return false">
+    <div class="flex items-start gap-gutter">
+      <div class="p-4 bg-primary-container text-on-primary-container rounded-lg">
+        <span class="material-symbols-outlined text-[32px]">pets</span>
+      </div>
+      <div class="flex-1 space-y-2">
+        <div class="flex justify-between items-center">
+          <span class="font-label-caps text-label-caps text-primary">LOOK AT ME!</span>
+          <span class="material-symbols-outlined text-primary slide-arrow transition-transform duration-200" style="transform: translateX(0px);">more_horiz</span>
+        </div>
+        <h2 class="font-headline-md text-lg text-on-surface">Character Reference</h2>
+      </div>
+    </div>
+  </a>
+  <!-- Software Engineering Card -->
+  <!-- <a class="group block p-stack-sm bg-surface-container-lowest border border-outline-variant rounded-xl transition-all duration-300 tech-glow hover:translate-y-0.5" href="https://github.com/kaimerah">
+    <div class="flex items-start gap-gutter">
+      <div class="p-4 bg-primary-container text-on-primary-container rounded-lg">
+        <span class="material-symbols-outlined text-[32px]">code</span>
+      </div>
+      <div class="flex-1 space-y-2">
+        <div class="flex justify-between items-center">
+          <span class="font-label-caps text-label-caps text-primary">ENGINEERING</span>
+          <span class="material-symbols-outlined text-primary slide-arrow transition-transform duration-200" style="transform: translateX(0px);">arrow_forward</span>
+        </div>
+        <h2 class="font-headline-md text-headline-md text-on-surface">Software Engineering</h2>
+        <p class="font-body-md text-body-md text-on-surface-variant">Full-stack development, distributed systems, and open-source contributions.</p>
+        <div class="flex flex-wrap gap-2 pt-2">
+          <span class="px-3 py-1 bg-surface-container-high rounded-full font-label-code text-label-code text-on-surface-variant border border-outline-variant">TypeScript</span>
+          <span class="px-3 py-1 bg-surface-container-high rounded-full font-label-code text-label-code text-on-surface-variant border border-outline-variant">Go</span>
+          <span class="px-3 py-1 bg-surface-container-high rounded-full font-label-code text-label-code text-on-surface-variant border border-outline-variant">Docker</span>
+        </div>
+      </div>
+    </div>
+  </a> -->
+  <!-- Sports & Athletics Card -->
+  <!-- <a class="group block p-stack-sm bg-surface-container-lowest border border-outline-variant rounded-xl transition-all duration-300 tech-glow hover:translate-y-0.5" href="#">
+    <div class="flex items-start gap-gutter">
+    <div class="p-4 bg-secondary-container text-on-secondary-container rounded-lg">
+    <span class="material-symbols-outlined text-[32px]">directions_bike</span>
+    </div>
+    <div class="flex-1 space-y-2">
+    <div class="flex justify-between items-center">
+    <span class="font-label-caps text-label-caps text-secondary">ATHLETICS</span>
+    <span class="material-symbols-outlined text-secondary slide-arrow transition-transform duration-200" style="transform: translateX(0px);">arrow_forward</span>
+    </div>
+    <h2 class="font-headline-md text-headline-md text-on-surface">Sports &amp; Athletics</h2>
+    <p class="font-body-md text-body-md text-on-surface-variant">High-performance training, competitive cycling, and endurance sports.</p>
+    <div class="flex flex-wrap gap-2 pt-2">
+    <span class="px-3 py-1 bg-surface-container-high rounded-full font-label-code text-label-code text-on-surface-variant border border-outline-variant">Cycling</span>
+    <span class="px-3 py-1 bg-surface-container-high rounded-full font-label-code text-label-code text-on-surface-variant border border-outline-variant">Triathlon</span>
+    </div>
+    </div>
+    </div>
+  </a> -->
+  <!-- Linguistics Card -->
+  <!-- <a class="group block p-stack-sm bg-surface-container-lowest border border-outline-variant rounded-xl transition-all duration-300 tech-glow hover:translate-y-0.5" href="#">
+    <div class="flex items-start gap-gutter">
+    <div class="p-4 bg-tertiary-container text-on-tertiary-container rounded-lg">
+    <span class="material-symbols-outlined text-[32px]">translate</span>
+    </div>
+    <div class="flex-1 space-y-2">
+    <div class="flex justify-between items-center">
+    <span class="font-label-caps text-label-caps text-tertiary">LINGUISTICS</span>
+    <span class="material-symbols-outlined text-tertiary slide-arrow transition-transform duration-200" style="transform: translateX(0px);">arrow_forward</span>
+    </div>
+    <h2 class="font-headline-md text-headline-md text-on-surface">Linguistics</h2>
+    <p class="font-body-md text-body-md text-on-surface-variant">Computational linguistics, phonology, and the evolution of language.</p>
+    <div class="flex flex-wrap gap-2 pt-2">
+    <span class="px-3 py-1 bg-surface-container-high rounded-full font-label-code text-label-code text-on-surface-variant border border-outline-variant">NLP</span>
+    <span class="px-3 py-1 bg-surface-container-high rounded-full font-label-code text-label-code text-on-surface-variant border border-outline-variant">Phonology</span>
+    </div>
+    </div>
+    </div>
+  </a> -->
+  <!-- Shell session -->
+  <!-- <div class="p-stack-sm bg-inverse-surface rounded-xl overflow-hidden shadow-2xl mt-stack-md">
+    <div class="flex items-center gap-2 mb-4 border-b border-outline-variant/30 pb-3">
+      <div class="flex gap-1.5">
+        <div class="w-3 h-3 rounded-full bg-[#ff5f56]"></div>
+        <div class="w-3 h-3 rounded-full bg-[#ffbd2e]"></div>
+        <div class="w-3 h-3 rounded-full bg-[#27c93f]"></div>
+      </div>
+      <span class="font-label-code text-label-code text-surface-variant/50 ml-4">kai@the-spot — zsh</span>
+    </div>
+    <pre class="font-label-code text-label-code text-surface-bright overflow-x-auto leading-relaxed"><span class="text-secondary-fixed-dim">kai@the-spot</span> <span class="text-outline">~</span> % <span class="text-primary-fixed-dim">whoami</span>
+χ Hong  ·  software engineer  ·  linguist  ·  cyclist
+<span class="text-surface-variant/50">───────────────────────────────────────</span>
+<span class="text-secondary-fixed-dim">kai@the-spot</span> <span class="text-outline">~</span> % <span class="text-primary-fixed-dim">ls</span> interests/
+<span class="text-tertiary-fixed-dim">engineering/</span>   <span class="text-secondary-fixed-dim">linguistics/</span>   <span class="text-primary-fixed-dim">athletics/</span>
+<span class="text-surface-variant/50">───────────────────────────────────────</span>
+<span class="text-secondary-fixed-dim">kai@the-spot</span> <span class="text-outline">~</span> % <span class="text-primary-fixed-dim">cat</span> status.txt
+currently iterating — watch this space
+<span class="text-surface-variant/50">───────────────────────────────────────</span>
+<span class="text-secondary-fixed-dim">kai@the-spot</span> <span class="text-outline">~</span> % <span class="text-outline">█</span></pre>
+  </div> -->
+</section>
+
+</main>
+<!-- Footer -->
+<footer class="full-width bottom-0 bg-surface border-t border-outline-variant mt-stack-sm">
+  <div class="flex flex-col md:flex-row justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-3 max-w-container-max mx-auto">
+    <span class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-widest">© 2026 Kai Hong. Built for Fun.</span>
+    <!-- <div class="flex gap-8 mt-2 md:mt-0">
+      <a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-all duration-300 hover:translate-x-1" href="#">Contact</a>
+    </div> -->
+  </div>
+</footer>
+<!-- Character References Modal -->
+<div id="char-ref-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 opacity-0 pointer-events-none transition-opacity duration-200" aria-modal="true" role="dialog">
+  <div class="absolute inset-0 bg-black/60 backdrop-blur-sm"></div>
+  <div class="relative bg-surface-container-lowest rounded-2xl shadow-2xl overflow-hidden max-w-[90vw] max-h-[90vh] flex flex-col">
+    <div class="flex items-center justify-between px-6 py-4">
+      <h2 class="font-headline-md text-md text-on-surface">Character Reference</h2>
+      <button id="char-ref-close" class="p-1.5 rounded-full text-on-surface-variant hover:bg-surface-container-high transition-colors duration-150 ml-4" aria-label="Close">
+        <span class="material-symbols-outlined text-[20px]">close</span>
+      </button>
+    </div>
+    <div class="overflow-auto px-6 pb-4 flex flex-col items-center">
+      <a href="./assets/kaih_ref.png" target="_blank" rel="noopener" class="cursor-zoom-in">
+        <img src="./assets/kaih_ref.png" alt="Character References" class="w-full object-contain pb-2 max-w-200">
+      </a>
+      <p class="text-slate-500 text-sm text-center">Base by <a href="https://www.deviantart.com/kozkez" target="_blank" rel="noopener" class="text-primary hover:underline">@kozke</a></p>
+      <div class="flex justify-center gap-2 mt-3 flex-wrap" id="color-chips">
+        <button class="color-chip w-8 h-8 rounded-full border-2 border-white/20 shadow relative group/chip" style="background:#1358a6" data-hex="#1358a6" title="#1358a6" aria-label="Copied #1358a6"></button>
+        <button class="color-chip w-8 h-8 rounded-full border-2 border-white/20 shadow relative group/chip" style="background:#1db2c6" data-hex="#1db2c6" title="#1db2c6" aria-label="Copied #1db2c6"></button>
+        <button class="color-chip w-8 h-8 rounded-full border-2 border-white/20 shadow relative group/chip" style="background:#d1ffff" data-hex="#d1ffff" title="#d1ffff" aria-label="Copied #d1ffff"></button>
+        <button class="color-chip w-8 h-8 rounded-full border-2 border-white/20 shadow relative group/chip" style="background:#99e9c2" data-hex="#99e9c2" title="#99e9c2" aria-label="Copied #99e9c2"></button>
+        <button class="color-chip w-8 h-8 rounded-full border-2 border-white/20 shadow relative group/chip" style="background:#863e94" data-hex="#863e94" title="#863e94" aria-label="Copied #863e94"></button>
+        <button class="color-chip w-8 h-8 rounded-full border-2 border-white/20 shadow relative group/chip" style="background:#641089" data-hex="#641089" title="#641089" aria-label="Copied #641089"></button>
+      </div>
+      <p id="chip-feedback" class="text-xs text-center text-on-surface-variant mt-1 opacity-0 transition-opacity duration-200">Copied!</p>
+    </div>
+  </div>
+</div>
+<script>
+  // Micro-interaction: Subtle parallax/follow effect for profile picture glow
+  document.addEventListener('mousemove', (e) => {
+    const glow = document.getElementById('avatar-glow');
+    if (glow) {
+      const rect = glow.getBoundingClientRect();
+      const x = e.clientX - rect.left - rect.width / 2;
+      const y = e.clientY - rect.top - rect.height / 2;
+      glow.style.transform = `translate(${x * 0.05}px, ${y * 0.05}px)`;
+    }
+  });
+
+  // Dark mode toggle
+  const themeToggle = document.getElementById('theme-toggle');
+  const html = document.documentElement;
+  const savedTheme = localStorage.getItem('theme');
+  if (savedTheme === 'dark' || (!savedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+    html.classList.add('dark');
+    themeToggle.textContent = 'light_mode';
+  }
+  themeToggle.addEventListener('click', () => {
+    const isDark = html.classList.toggle('dark');
+    themeToggle.textContent = isDark ? 'light_mode' : 'dark_mode';
+    localStorage.setItem('theme', isDark ? 'dark' : 'light');
+  });
+
+  // Swap nav title when profile header scrolls out of view
+  const navTitle = document.getElementById('nav-title');
+  const profileHeader = document.getElementById('profile-header');
+  new IntersectionObserver(([entry]) => {
+    navTitle.style.opacity = '0';
+    setTimeout(() => {
+      navTitle.textContent = entry.isIntersecting ? 'The Spot' : 'χ Hong';
+      navTitle.style.opacity = '1';
+    }, 150);
+  }, { threshold: 0 }).observe(profileHeader);
+
+  // χ tooltip — touch support
+  const chiTip = document.getElementById('chi-tip');
+  let chiTipTimer;
+  document.getElementById('chi-tip-trigger').addEventListener('click', (e) => {
+    e.stopPropagation();
+    chiTip.style.opacity = '1';
+    clearTimeout(chiTipTimer);
+    chiTipTimer = setTimeout(() => chiTip.style.opacity = '', 2500);
+  });
+  document.addEventListener('click', () => {
+    clearTimeout(chiTipTimer);
+    chiTip.style.opacity = '';
+  });
+
+  // Share button
+  document.getElementById('share-btn').addEventListener('click', async () => {
+    const btn = document.getElementById('share-btn');
+    if (navigator.share) {
+      navigator.share({ title: document.title, url: location.href });
+    } else {
+      await navigator.clipboard.writeText(location.href);
+      btn.textContent = 'check';
+      setTimeout(() => btn.textContent = 'share', 2000);
+    }
+  });
+
+  // Character References modal
+  const charRefModal = document.getElementById('char-ref-modal');
+  const openModal = () => {
+    charRefModal.classList.remove('opacity-0', 'pointer-events-none');
+    charRefModal.classList.add('opacity-100');
+  };
+  const closeModal = () => {
+    charRefModal.classList.add('opacity-0', 'pointer-events-none');
+    charRefModal.classList.remove('opacity-100');
+  };
+  document.getElementById('char-ref-card').addEventListener('click', openModal);
+  document.getElementById('char-ref-close').addEventListener('click', (e) => { e.stopPropagation(); closeModal(); });
+  charRefModal.addEventListener('click', (e) => { if (!e.target.closest('.bg-surface-container-lowest')) closeModal(); });
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });
+
+  // Colour chips — hover to show hex, click to copy
+  const chipFeedback = document.getElementById('chip-feedback');
+  let chipFeedbackTimer;
+  document.querySelectorAll('.color-chip').forEach(chip => {
+    const hex = chip.dataset.hex;
+
+    chip.addEventListener('mouseenter', () => { chip.title = hex; });
+
+    chip.addEventListener('click', async () => {
+      await navigator.clipboard.writeText(hex);
+      clearTimeout(chipFeedbackTimer);
+      chipFeedback.textContent = `Copied ${hex}`;
+      chipFeedback.style.opacity = '1';
+      chipFeedbackTimer = setTimeout(() => chipFeedback.style.opacity = '0', 1800);
+    });
+  });
+
+  // Hover energy effect for cards
+  const cards = document.querySelectorAll('.group.block');
+  cards.forEach(card => {
+    card.addEventListener('mouseenter', () => {
+      const arrow = card.querySelector('.slide-arrow');
+      if (arrow) arrow.style.transform = 'translateX(4px)';
+    });
+    card.addEventListener('mouseleave', () => {
+      const arrow = card.querySelector('.slide-arrow');
+      if (arrow) arrow.style.transform = 'translateX(0px)';
+    });
+  });
+</script>
+</body>
+</html>
