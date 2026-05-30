@@ -61,20 +61,45 @@
 <!-- Vertical Stack of Cards -->
 <section class="space-y-stack-sm">
   <!--Char Refs-->
-  <a id="char-ref-card" class="group block p-stack-sm bg-surface-container-lowest border border-outline-variant rounded-xl transition-all duration-300 tech-glow hover:translate-y-0.5" href="#" onclick="return false">
+  <a id="char-ref-card" class="group block p-stack-sm bg-surface-container-lowest border border-outline-variant rounded-xl transition-all duration-300 tech-glow hover:translate-y-0.5" onclick="return false">
     <div class="flex items-start gap-gutter">
       <div class="p-4 bg-primary-container text-on-primary-container rounded-lg">
         <span class="material-symbols-outlined text-[32px]">pets</span>
       </div>
-      <div class="flex-1 space-y-2">
+      <div class="flex-1">
         <div class="flex justify-between items-center">
-          <span class="font-label-caps text-label-caps text-primary">LOOK AT ME!</span>
+          <span class="font-label-caps text-label-caps text-primary">LOOK MA, NO HAND!</span>
           <span class="material-symbols-outlined text-primary slide-arrow transition-transform duration-200" style="transform: translateX(0px);">more_horiz</span>
         </div>
         <h2 class="font-headline-md text-lg text-on-surface">Character Reference</h2>
       </div>
     </div>
   </a>
+
+  <!--- Name Card Gallery-->
+  <a id="name-card-card" class="group block p-stack-sm bg-surface-container-lowest border border-outline-variant rounded-xl transition-all duration-300 tech-glow hover:translate-y-0.5" href="#" onclick="return false">
+    <div class="flex items-start gap-gutter">
+    <div class="p-4 bg-secondary-container text-on-secondary-container rounded-lg">
+    <span class="material-symbols-outlined text-[32px]">archive</span>
+    </div>
+    <div class="flex-1 space-y-0.5">
+      <div class="flex justify-between items-center">
+        <span class="font-label-caps text-label-caps text-secondary">ARCHIVE</span>
+        <span class="material-symbols-outlined text-secondary slide-arrow transition-transform duration-200" style="transform: translateX(0px);">more_horiz</span>
+      </div>
+      <h2 class="font-headline-md text-lg text-on-surface">Name Cards</h2>
+      </div>
+    </div>
+  </a>
+
+  <hr class="border-outline-variant my-stack-sm">
+  <p class="font-label-caps text-label-caps text-on-surface-variant">Sticker Packs (Telegram)</p>
+  <div class="flex flex-wrap gap-stack-sm justify-center">
+    <a class="group inline-flex p-2.5 bg-surface-container-lowest border border-outline-variant rounded-xl transition-all duration-300 tech-glow hover:translate-y-0.5" href="https://t.me/addstickers/kaihong_01" target="_blank" rel="noopener noreferrer">
+      <h2 class="font-headline-md text-base text-on-surface">Pack 1</h2>
+    </a>
+  </div>
+
   <!-- Software Engineering Card -->
   <!-- <a class="group block p-stack-sm bg-surface-container-lowest border border-outline-variant rounded-xl transition-all duration-300 tech-glow hover:translate-y-0.5" href="https://github.com/kaimerah">
     <div class="flex items-start gap-gutter">
@@ -169,6 +194,37 @@ currently iterating — watch this space
     </div> -->
   </div>
 </footer>
+<!-- Name Cards Modal -->
+<div id="name-card-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 opacity-0 pointer-events-none transition-opacity duration-200" aria-modal="true" role="dialog">
+  <div class="absolute inset-0 bg-black/60 backdrop-blur-sm"></div>
+  <div class="relative bg-surface-container-lowest rounded-2xl shadow-2xl overflow-hidden max-h-[90vh] flex flex-col w-full max-w-lg">
+    <!-- Header -->
+    <div class="flex items-center justify-between px-6 py-4 shrink-0">
+      <div>
+        <h2 class="font-headline-md text-md text-on-surface">Name Cards</h2>
+        <p id="name-card-counter" class="font-label-caps text-label-caps text-on-surface-variant"></p>
+      </div>
+      <button id="name-card-close" class="p-1.5 rounded-full text-on-surface-variant hover:bg-surface-container-high transition-colors duration-150 ml-4" aria-label="Close">
+        <span class="material-symbols-outlined text-[20px]">close</span>
+      </button>
+    </div>
+    <!-- Carousel -->
+    <div class="relative overflow-hidden px-6 pb-4 flex-1 flex flex-col min-h-0">
+      <div id="name-card-track" class="flex h-full">
+        <!-- Slides injected by JS -->
+      </div>
+      <!-- Prev / Next -->
+      <button id="name-card-prev" class="absolute left-2 top-1/2 -translate-y-1/2 p-1.5 bg-surface-container/80 backdrop-blur-sm rounded-full text-on-surface-variant hover:bg-surface-container-high transition-colors duration-150 z-10" aria-label="Previous">
+        <span class="material-symbols-outlined text-[20px]">chevron_left</span>
+      </button>
+      <button id="name-card-next" class="absolute right-2 top-1/2 -translate-y-1/2 p-1.5 bg-surface-container/80 backdrop-blur-sm rounded-full text-on-surface-variant hover:bg-surface-container-high transition-colors duration-150 z-10" aria-label="Next">
+        <span class="material-symbols-outlined text-[20px]">chevron_right</span>
+      </button>
+    </div>
+    <!-- Dots -->
+    <div id="name-card-dots" class="flex justify-center gap-2 pb-4 shrink-0"></div>
+  </div>
+</div>
 <!-- Character References Modal -->
 <div id="char-ref-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 opacity-0 pointer-events-none transition-opacity duration-200" aria-modal="true" role="dialog">
   <div class="absolute inset-0 bg-black/60 backdrop-blur-sm"></div>
@@ -192,7 +248,7 @@ currently iterating — watch this space
         <button class="color-chip w-8 h-8 rounded-full border-2 border-white/20 shadow relative group/chip" style="background:#863e94" data-hex="#863e94" title="#863e94" aria-label="Copied #863e94"></button>
         <button class="color-chip w-8 h-8 rounded-full border-2 border-white/20 shadow relative group/chip" style="background:#641089" data-hex="#641089" title="#641089" aria-label="Copied #641089"></button>
       </div>
-      <p id="chip-feedback" class="text-xs text-center text-on-surface-variant mt-1 opacity-0 transition-opacity duration-200">Copied!</p>
+      <p id="chip-feedback" class="text-xs text-center text-on-surface-variant mt-1 transition-opacity duration-200">Click to copy hex</p>
     </div>
   </div>
 </div>
@@ -248,14 +304,18 @@ currently iterating — watch this space
   });
 
   // Share button
-  document.getElementById('share-btn').addEventListener('click', async () => {
-    const btn = document.getElementById('share-btn');
-    if (navigator.share) {
+  const shareBtn = document.getElementById('share-btn');
+  const isMobile = () => window.matchMedia('(max-width: 767px)').matches;
+  const syncShareIcon = () => { shareBtn.textContent = isMobile() ? 'share' : 'link'; };
+  syncShareIcon();
+  window.addEventListener('resize', syncShareIcon);
+  shareBtn.addEventListener('click', async () => {
+    if (isMobile() && navigator.share) {
       navigator.share({ title: document.title, url: location.href });
     } else {
       await navigator.clipboard.writeText(location.href);
-      btn.textContent = 'check';
-      setTimeout(() => btn.textContent = 'share', 2000);
+      shareBtn.textContent = 'check';
+      setTimeout(syncShareIcon, 2000);
     }
   });
 
@@ -286,8 +346,7 @@ currently iterating — watch this space
       await navigator.clipboard.writeText(hex);
       clearTimeout(chipFeedbackTimer);
       chipFeedback.textContent = `Copied ${hex}`;
-      chipFeedback.style.opacity = '1';
-      chipFeedbackTimer = setTimeout(() => chipFeedback.style.opacity = '0', 1800);
+      chipFeedbackTimer = setTimeout(() => { chipFeedback.textContent = 'Click to copy hex'; }, 1800);
     });
   });
 
@@ -303,6 +362,123 @@ currently iterating — watch this space
       if (arrow) arrow.style.transform = 'translateX(0px)';
     });
   });
+
+  // Name Cards carousel modal
+  // Each entry is one version: { front, back, caption }
+  const NAME_CARDS = [
+    { front: './assets/namecard_001_front.png', back: './assets/namecard_001_back.png', caption: 'Version 1' },  ];
+
+  (() => {
+    const modal   = document.getElementById('name-card-modal');
+    const track   = document.getElementById('name-card-track');
+    const dotsEl  = document.getElementById('name-card-dots');
+    const counter = document.getElementById('name-card-counter');
+    const prevBtn = document.getElementById('name-card-prev');
+    const nextBtn = document.getElementById('name-card-next');
+    let current = 0;
+
+    const cards = NAME_CARDS.length ? NAME_CARDS : [{ front: '', back: '', caption: 'No images yet' }];
+    const total = cards.length;
+
+    // Single virtual slide
+    const slide = document.createElement('div');
+    slide.className = 'w-full flex flex-col gap-3 transition-opacity duration-150';
+    track.appendChild(slide);
+
+    // Dots
+    const dots = cards.map((_, i) => {
+      const d = document.createElement('button');
+      d.className = 'w-2 h-2 rounded-full transition-colors duration-200 bg-outline-variant';
+      d.setAttribute('aria-label', `Go to slide ${i + 1}`);
+      d.addEventListener('click', () => goTo(i));
+      dotsEl.appendChild(d);
+      return d;
+    });
+
+    const renderSlide = ({ front, back, caption }) => {
+      slide.innerHTML = '';
+      const row = document.createElement('div');
+      row.className = 'flex gap-3 items-center';
+
+      [{ src: front, label: 'Front' }, { src: back, label: 'Back' }].forEach(({ src, label }) => {
+        const wrap = document.createElement('div');
+        wrap.className = 'flex-1 min-w-0 flex flex-col gap-1 items-center';
+        if (src) {
+          const img = document.createElement('img');
+          img.src = src;
+          img.alt = label;
+          img.className = 'w-full object-contain rounded-lg max-h-[45vh]';
+          wrap.appendChild(img);
+        } else {
+          const ph = document.createElement('div');
+          ph.className = 'flex items-center justify-center w-full h-40 bg-surface-container rounded-lg text-on-surface-variant';
+          ph.innerHTML = '<span class="material-symbols-outlined text-[40px] opacity-30">image</span>';
+          wrap.appendChild(ph);
+        }
+        const lbl = document.createElement('p');
+        lbl.className = 'font-label-caps text-label-caps text-on-surface-variant';
+        lbl.textContent = label;
+        wrap.appendChild(lbl);
+        row.appendChild(wrap);
+      });
+
+      slide.appendChild(row);
+
+      if (caption) {
+        const cap = document.createElement('p');
+        cap.className = 'font-body-md text-body-md text-on-surface-variant text-center';
+        cap.textContent = caption;
+        slide.appendChild(cap);
+      }
+    };
+
+    const goTo = (i) => {
+      current = (i + total) % total;
+      slide.style.opacity = '0';
+      setTimeout(() => {
+        renderSlide(cards[current]);
+        slide.style.opacity = '1';
+      }, 100);
+      counter.textContent = `${current + 1} / ${total}`;
+      dots.forEach((d, idx) => {
+        d.classList.toggle('bg-primary', idx === current);
+        d.classList.toggle('bg-outline-variant', idx !== current);
+      });
+      prevBtn.style.display = total <= 1 ? 'none' : '';
+      nextBtn.style.display = total <= 1 ? 'none' : '';
+    };
+
+    prevBtn.addEventListener('click', () => goTo(current - 1));
+    nextBtn.addEventListener('click', () => goTo(current + 1));
+
+    const openNameCardModal = () => {
+      current = -1;
+      goTo(0);
+      modal.classList.remove('opacity-0', 'pointer-events-none');
+      modal.classList.add('opacity-100');
+    };
+    const closeNameCardModal = () => {
+      modal.classList.add('opacity-0', 'pointer-events-none');
+      modal.classList.remove('opacity-100');
+    };
+
+    document.getElementById('name-card-card').addEventListener('click', openNameCardModal);
+    document.getElementById('name-card-close').addEventListener('click', (e) => { e.stopPropagation(); closeNameCardModal(); });
+    modal.addEventListener('click', (e) => { if (!e.target.closest('.bg-surface-container-lowest')) closeNameCardModal(); });
+    document.addEventListener('keydown', (e) => {
+      if (modal.classList.contains('opacity-0')) return;
+      if (e.key === 'ArrowLeft')  goTo(current - 1);
+      if (e.key === 'ArrowRight') goTo(current + 1);
+    });
+
+    // Touch swipe
+    let touchStartX = 0;
+    track.addEventListener('touchstart', (e) => { touchStartX = e.touches[0].clientX; }, { passive: true });
+    track.addEventListener('touchend', (e) => {
+      const dx = e.changedTouches[0].clientX - touchStartX;
+      if (Math.abs(dx) > 40) goTo(current + (dx < 0 ? 1 : -1));
+    });
+  })();
 </script>
 </body>
 </html>
