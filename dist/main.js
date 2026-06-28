@@ -108,7 +108,7 @@ document.querySelectorAll('.group.block').forEach(card => {
 // Name Cards carousel modal
 // Each entry is one version: { front, back, caption }
 const NAME_CARDS = [
-  { front: './assets/namecard_001_front.png', back: './assets/namecard_001_back.png', caption: 'Version 1<br><span class="text-sm">Illustration by <a href="https://featheri-roo.carrd.co" class="text-primary underline" target="_blank" rel="noopener">@featheri_roo</a></span>' },
+  { front: './assets/namecard_001_front.png', back: './assets/namecard_001_back.png', caption: 'Version 1<br><span class="text-sm">Character art by <a href="https://featheri-roo.carrd.co" class="text-primary underline" target="_blank" rel="noopener">@featheri_roo</a></span>' },
 ];
 
 (() => {
